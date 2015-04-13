@@ -161,10 +161,18 @@ function resumes_builder_menu_help(){
 	include('resumes-builder-help.php');	
 }
 
+function resumes_builder_menu_settings(){
+	include('resumes-builder-settings.php');	
+}
 
 
 
 function resumes_builder_menu_init() {
+	
+	
+	//add_submenu_page('edit.php?post_type=resumes', __('Settings','resumes_builder'), __('Settings','resumes_builder'), 'manage_options', 'resumes_builder_menu_settings', 'resumes_builder_menu_settings');
+	
+		
 	add_submenu_page('edit.php?post_type=resumes', __('Help','resumes_builder'), __('Help','resumes_builder'), 'manage_options', 'resumes_builder_menu_help', 'resumes_builder_menu_help');
 
 	

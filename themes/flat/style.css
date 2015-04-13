@@ -10,6 +10,10 @@
 
 
 .resumes-container.flat .resumes-header {
+  background: none repeat scroll 0 0 rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0 0 3px -1px rgb(153, 153, 153);
+  margin: 15px 11px;
   padding: 40px 20px;
 }
 
@@ -56,8 +60,10 @@
 
 .resumes-container.flat .section-inner {
   background: none repeat scroll 0 0 rgb(255, 255, 255);
-  margin: 10px;
+  box-shadow: 0 0 3px -1px rgb(153, 153, 153);
+  margin: 13px 10px;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .resumes-container.flat .section-title {

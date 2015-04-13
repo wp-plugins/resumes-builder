@@ -162,7 +162,7 @@ function meta_boxes_resumes_input( $post ) {
                     <p class="option-info"></p>
                     <input type="text" placeholder="Title" name="sections_data[title]" value="<?php if(isset($sections_data['title'])) echo $sections_data['title']; ?>" />
                     
-                    <p class="option-title">Resumes Subtile</p>
+                    <p class="option-title">Resumes Subtitle</p>
                     <p class="option-info"></p>
                     <input type="text" placeholder="Subtitle" name="sections_data[subtitle]" value="<?php if(isset($sections_data['subtitle'])) echo $sections_data['subtitle']; ?>" />
                     
