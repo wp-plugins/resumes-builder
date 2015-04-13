@@ -215,7 +215,7 @@
 }
 
 .resumes-container.blue .section.interest .section-title::before {
-  content: "\f02e";
+  content: "\f000";
   font-family: fontawesome;
   left: -45px;
   position: absolute;
