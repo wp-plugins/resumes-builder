@@ -23,7 +23,8 @@ Easy way to create your CV/Resume/Biodata, predefined fields lets you input unli
 
 
 
-<strong>Plugin Features</strong><br />
+<strong>Plugin Features</strong>
+
 * Unlimited input fields.
 * Resume thumbnail.
 * Predefined fields for Education, Experiences, Contact Info, Award, Skill, Social, Interest, Language, Portfolio.
