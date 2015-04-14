@@ -31,6 +31,10 @@ Easy way to create your CV/Resume/Biodata, predefined fields lets you input unli
 * Graphical(percentage bar) represantation for skill values.
 
 
+<strong>Video Tutorial</strong>
+
+https://www.youtube.com/watch?v=YXwUFSU23iU
+
 == Installation ==
 
 1. Install as regular WordPress plugin.<br />
