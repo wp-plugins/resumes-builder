@@ -48,11 +48,34 @@ class ResumesBuilderClass
 					$sections_entries_args = $this->sections_entries_args;					
 					
 					
-					$sections_data = (array)$this->post_meta($post->ID, 'sections_data');										
-				
+					$sections_data = $this->post_meta($post->ID, 'sections_data');										
 					
+			
+					if( !empty($sections_data))
+						{
+							$sections_new = array();
+							
+							foreach($sections_data as $key=>$val)
+								{
+									if($key == "thumbnail" || $key == "title"  || $key == "subtitle"  || $key == "details")
+										{
 
-					//print_r($sections_data);
+										}
+									else
+										{
+											$sections_new[$key] = $sections[$key];		
+										}
+																				
+									
+								}
+							
+							$sections = $sections_new;
+							
+							
+						}
+
+
+					
 					
 					$html = '';
 				
@@ -119,8 +142,15 @@ class ResumesBuilderClass
 					$html .= '<div class="entry-list entry-list-'.$key.' ">';
 					
 /////////////////////////////////////////
+					if(!empty($sections_data[$key]['entries']))
+						{
+							$sections_data_entries =  $sections_data[$key]['entries'];
+						}
+					else
+						{
+							$sections_data_entries =  array();
+						}
 					
-					$sections_data_entries =  $sections_data[$key]['entries'];
 					
 					if(empty($sections_data_entries))
 						{
