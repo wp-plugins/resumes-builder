@@ -3,8 +3,8 @@
 	Donate link: http://paratheme.com
 	Tags:  Resumes Builder, Resumes, Resume, resume builder online
 	Requires at least: 4.1
-	Tested up to: 4.2
-	Stable tag: 1.0
+	Tested up to: 4.2.1
+	Stable tag: 1.1
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ then paste this shortcode anywhere in your page to display grid<br />
 
 
 == Changelog ==
+
+
+	= 1.1 =
+    * 01/05/2015 - add - section customizer.
 
 	= 1.0 =
     * 11/04/2015 Initial release.

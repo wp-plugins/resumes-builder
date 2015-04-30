@@ -149,6 +149,9 @@
 }
 
 
+
+
+
 .resumes-container.blue .col-left .resumes-social .entry a {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -166,7 +169,22 @@
 }
 
 
+.resumes-container.blue .col-left .resumes-skill {
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  padding: 30px 10px 10px  65px;
+  position: relative;
+  text-align: left;
+}
+.resumes-container.blue .col-left .resumes-skill .present {
+  background: none repeat scroll 0 0 rgba(239, 239, 239, 0.45);
+  font-size: 12px;
+  margin: 7px 0;
+}
 
+.resumes-container.blue .col-left .resumes-skill .present-value {
+  background: none repeat scroll 0 0 rgb(26, 159, 193);
+}
 
 
 .resumes-container.blue .col-right {

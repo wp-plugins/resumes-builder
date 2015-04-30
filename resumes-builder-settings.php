@@ -7,21 +7,23 @@ if ( ! defined('ABSPATH')) exit; // if direct access
 
 if(empty($_POST['resumes_builder_hidden']))
 	{
-		$resumes_builder_member_social_field = get_option( 'resumes_builder_member_social_field' );
-
-
-
+		$resumes_builder_sections = get_option( 'resumes_builder_sections' );
+		$resumes_builder_section_args = get_option( 'resumes_builder_section_args' );	
+		$resumes_builder_section_icons = get_option( 'resumes_builder_section_icons' );
 
 	}
 else
 	{	
 		if($_POST['resumes_builder_hidden'] == 'Y') {
 			//Form data sent
-			$resumes_builder_member_social_field = stripslashes_deep($_POST['resumes_builder_member_social_field']);
-			update_option('resumes_builder_member_social_field', $resumes_builder_member_social_field);
+			$resumes_builder_sections = stripslashes_deep($_POST['resumes_builder_sections']);
+			update_option('resumes_builder_sections', $resumes_builder_sections);
+			
+			$resumes_builder_section_args = stripslashes_deep($_POST['resumes_builder_section_args']);
+			update_option('resumes_builder_section_args', $resumes_builder_section_args);			
 
-
-	
+			$resumes_builder_section_icons = stripslashes_deep($_POST['resumes_builder_section_icons']);
+			update_option('resumes_builder_section_icons', $resumes_builder_section_icons);			
 
 			?>
 			<div class="updated"><p><strong><?php _e('Changes Saved.', 'resumes_builder' ); ?></strong></p></div>
@@ -52,7 +54,7 @@ else
 			
 		?>
 
-    <div class="para-settings resumes_builder-settings">
+    <div class="para-settings resumes-builder-settings">
     
         <ul class="tab-nav"> 
             <li nav="1" class="nav1 active">Options</li>       
@@ -61,12 +63,95 @@ else
 		<ul class="box">
        		<li style="display: block;" class="box1 tab-box active">
             
-				<div class="option-box">
-                    <p class="option-title">Video Tutorial</p>
-                    <p class="option-info">Please watch this video tutorial.</p>
-                	
-                    
+			<div class="option-box">
+				<p class="option-title"><?php _e('Resumes Builder Sections.','resumes_builder'); ?></p>
+ 				<p class="option-info">You can customize section name and properties here and add your own sections.</p>
+				<div class="sections-adder">
+            <?php 
+				$ResumesBuilderClass = new ResumesBuilderClass();
+				
+				if(empty($resumes_builder_sections))
+					{
+						$resumes_builder_sections = $ResumesBuilderClass->sections;
+					}
+
+				if(empty($resumes_builder_section_args))
+					{
+						$resumes_builder_section_args = $ResumesBuilderClass->sections_entries_args;
+					}
+
+					echo '<div class="section-list">';
+				foreach($resumes_builder_sections as $section_key=>$section_name)
+					{
+						echo '<div class="section section-'.$section_key.'">';
+						
+						echo '<div class="header">'.$section_name.'<span class="remove">X</span></div>';
+						echo '<div class="args">
+						<b>Section Name:</b><br/>
+						<input type="text" name="resumes_builder_sections['.$section_key.']" value="'.$section_name.'" />';
+						
+						echo '<br/><br/><b>Section Fields:</b><br/>';
+						echo '<table>';
+						
+						if(empty($resumes_builder_section_args[$section_key]))
+							{
+								$resumes_builder_section_args[$section_key] = array('title','subtitle','details');
+							}
+						
+						foreach($resumes_builder_section_args[$section_key] as $arg)
+							{
+								echo '<tr>';
+								echo '<td>';
+								
+								
+								echo '<input type="text" name="resumes_builder_section_args['.$section_key.']['.$arg.']" value="'.$arg.'" />';
+								echo '</td>';
+								echo '<td>';
+								
+									
+								
+								
+								
+								
+								echo '<span class="remove">X</span>
+								</td>';
+
+								
+								echo '</tr>';
+							}
+							echo '</table>';
+						echo '<div class="button add-new-args" section-key="'.$section_key.'">Add New</div>';
+							
+							
+						echo '</div>';						
+						
+						
+						
+						
+						echo '</div>';
+						
+					}
+				echo '</div>';
+				echo '<div class="button add-new-section">Add New</div>';
+
+
+            
+            ?>
+               
+                
                 </div>
+              
+
+
+                    
+        
+        
+
+        
+        
+
+                </div>
+
             
             </li>
                         
@@ -102,7 +187,7 @@ else
 				<div class="option-box">
                     <p class="option-title">Submit Reviews...</p>
                     <p class="option-info">We are working hard to build some awesome plugins for you and spend thousand hour for plugins. we wish your three(3) minute by submitting five star reviews at wordpress.org. if you have any issue please submit at forum.</p>
-                	
+                	<img class="resumes_builder-pro-pricing" src="<?php echo resumes_builder_plugin_url."css/five-star.png";?>" /><br />
                     <a target="_blank" href="<?php echo resumes_builder_wp_reviews; ?>">
                 		<?php echo resumes_builder_wp_reviews; ?>
                		</a>
@@ -119,12 +204,15 @@ else
 					?>
                 </div>
                 
+<!-- 
 				<div class="option-box">
                     <p class="option-title">Video Tutorial</p>
                     <p class="option-info">Please watch this video tutorial.</p>
-                	
-                    
+                	<iframe width="640" height="480" src="<?php echo resumes_builder_tutorial_video_url; ?>" frameborder="0" allowfullscreen></iframe>
                 </div>
+
+
+-->
                 
                 
                 

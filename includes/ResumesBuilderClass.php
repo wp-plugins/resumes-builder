@@ -43,9 +43,33 @@ class ResumesBuilderClass
 					{
 					global $post;
 					
-					$sections = $this->sections;
+					
+					$resumes_builder_sections = get_option( 'resumes_builder_sections' );
+					$resumes_builder_section_args = get_option( 'resumes_builder_section_args' );
+					
+					if(empty($resumes_builder_sections))
+						{
+							$sections = $this->sections;
+						}
+					else
+						{
+							$sections = $resumes_builder_sections;
+						}
+					
+					if(empty($resumes_builder_section_args))
+						{
+							$sections_entries_args = $this->sections;
+						}
+					else
+						{
+							$sections_entries_args = $resumes_builder_section_args;
+						}					
+					
+					
+					
+					//$sections = $this->sections;
 					$sections_properies = $this->sections_properies;
-					$sections_entries_args = $this->sections_entries_args;					
+					//$sections_entries_args = $this->sections_entries_args;					
 					
 					
 					$sections_data = $this->post_meta($post->ID, 'sections_data');										
@@ -245,9 +269,47 @@ class ResumesBuilderClass
 	public function get_resumes_sections($resume_id, $section)
 				{
 					
-					$sections = $this->sections;
+					
+					$resumes_builder_sections = get_option( 'resumes_builder_sections' );
+					$resumes_builder_section_args = get_option( 'resumes_builder_section_args' );
+					
+					if(empty($resumes_builder_sections))
+						{
+							$sections = $this->sections;
+						}
+					else
+						{
+							$sections = $resumes_builder_sections;
+						}
+					
+					if(empty($resumes_builder_section_args))
+						{
+							$sections_entries_args = $this->sections;
+						}
+					else
+						{
+							$sections_entries_args = $resumes_builder_section_args;
+						}
+					
+					
+					
+					
+					
+					
+					
+					//$sections = $this->sections;
 					$sections_properies = $this->sections_properies;
-					$sections_entries_args = $this->sections_entries_args;	
+					//$sections_entries_args = $this->sections_entries_args;	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					
 					$sections_data = (array)$this->post_meta($resume_id, 'sections_data');
 					//var_dump($sections_data);
@@ -331,7 +393,7 @@ class ResumesBuilderClass
 		
 	public function get_resumes_header($resume_id, $header)
 				{
-
+					$html = '';
 					
 					$sections_data = (array)$this->post_meta($resume_id, 'sections_data');
 					
@@ -362,7 +424,27 @@ class ResumesBuilderClass
 		
 		
 		
-		
+	public function get_resumes_section_entry_array($resume_id, $section)
+				{
+
+					$sections_data = (array)$this->post_meta($resume_id, 'sections_data');	
+
+					$entries = $sections_data[$section]['entries'];
+
+					foreach($entries as $key1=>$values)
+						{
+
+							foreach($values as $key=>$value)
+								{
+									if($key != 'details')
+									$entries_new[$key1][$key] = $value;
+								}
+
+						}	
+					return $entries_new;
+				
+				}
+				
 		
 		
 		

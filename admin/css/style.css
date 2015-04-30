@@ -184,3 +184,77 @@ background: none repeat scroll 0 0 rgb(172, 218, 253);
   vertical-align: top;
   width: 14px;
 }
+
+
+/*Setting page*/
+
+.resumes-builder-settings .sections-adder{}
+
+
+.resumes-builder-settings .sections-adder .section{
+  background: none repeat scroll 0 0 rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(153, 153, 153);
+  display: block;
+  margin: 5px 0;
+  position: relative;
+	
+	}
+
+.resumes-builder-settings .sections-adder .section.active .args {
+  display: block;
+}
+
+.resumes-builder-settings .sections-adder .section .header{
+
+  padding: 7px 10px;
+	
+	}
+.resumes-builder-settings .sections-adder .section.active .header{
+  background: none repeat scroll 0 0 rgb(184, 229, 255);
+  border-bottom: 1px solid rgb(153, 153, 153);
+
+	
+	}
+	
+.resumes-builder-settings .sections-adder .section .header .remove {
+  background: none repeat scroll 0 0 rgb(249, 102, 21);
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  margin-left: 15px;
+  padding: 1px 6px;
+}	
+	
+.resumes-builder-settings .sections-adder .args {
+  display: none;
+}
+
+.resumes-builder-settings .sections-adder .section.active .args {
+  display: block;
+  padding: 10px;
+}
+
+.resumes-builder-settings .sections-adder .section .args .remove {
+ background: none repeat scroll 0 0 rgb(249, 102, 21);
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 15px;
+  padding: 1px 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

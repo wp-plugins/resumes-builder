@@ -8,9 +8,37 @@
 		$entry_count = $_POST['entry_count'];		
 		
 		$ResumesBuilderClass = new ResumesBuilderClass();
-		$sections = $ResumesBuilderClass->sections;
 		
-		$sections_entries_args = $ResumesBuilderClass->sections_entries_args;	
+		
+		
+		
+		$resumes_builder_sections = get_option( 'resumes_builder_sections' );
+		$sections_entries_args = get_option( 'resumes_builder_section_args' );
+		
+		if(empty($resumes_builder_sections))
+			{
+				$sections = $ResumesBuilderClass->sections;
+			}
+		else
+			{
+				$sections = $resumes_builder_sections;
+			}
+		
+		if(empty($sections_entries_args))
+			{
+				$sections_entries_args = $this->sections;
+			}
+		else
+			{
+				$sections_entries_args = $sections_entries_args;
+			}	
+		
+
+		
+		
+		//$sections = $ResumesBuilderClass->sections;
+		
+		//$sections_entries_args = $ResumesBuilderClass->sections_entries_args;	
 		$sections_data = array();
 		
 		

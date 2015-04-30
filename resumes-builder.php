@@ -3,7 +3,7 @@
 Plugin Name: Resume's Builder
 Plugin URI: http://paratheme.com
 Description: Awesome Resume Builder.
-Version: 1.0
+Version: 1.1
 Author: paratheme
 Author URI: http://paratheme.com
 License: GPLv2 or later
@@ -99,7 +99,7 @@ register_activation_hook(__FILE__, 'resumes_builder_activation');
 
 function resumes_builder_activation()
 	{
-		$resumes_builder_version= "1.0";
+		$resumes_builder_version= "1.1";
 		update_option('resumes_builder_version', $resumes_builder_version); //update plugin version.
 		
 		$resumes_builder_customer_type= "free"; //customer_type "free"
@@ -170,7 +170,7 @@ function resumes_builder_menu_settings(){
 function resumes_builder_menu_init() {
 	
 	
-	//add_submenu_page('edit.php?post_type=resumes', __('Settings','resumes_builder'), __('Settings','resumes_builder'), 'manage_options', 'resumes_builder_menu_settings', 'resumes_builder_menu_settings');
+	add_submenu_page('edit.php?post_type=resumes', __('Settings','resumes_builder'), __('Settings','resumes_builder'), 'manage_options', 'resumes_builder_menu_settings', 'resumes_builder_menu_settings');
 	
 		
 	add_submenu_page('edit.php?post_type=resumes', __('Help','resumes_builder'), __('Help','resumes_builder'), 'manage_options', 'resumes_builder_menu_help', 'resumes_builder_menu_help');
