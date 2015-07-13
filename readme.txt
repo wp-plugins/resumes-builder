@@ -1,5 +1,5 @@
 === Resume's Builder ===
-	Contributors: paratheme
+	Contributors: 
 	Donate link: http://paratheme.com
 	Tags:  Resumes Builder, Resumes, Resume, resume builder online
 	Requires at least: 4.1
